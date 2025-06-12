@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection with Voice Command</title>
+</head>
+<body>
+    <h1 align='center' style='color:brown'>Object Detection with Voice Command</h1>
+    <div>
+        <label for="voiceCommand">Voice Command:</label>
+        <input type="text" id="voiceCommand" name="voiceCommand">
+        <button onclick="sendVoiceCommand()">Send Command</button>
+    </div>
+    <div>
+        <img src="{{ url_for('video_feed') }}" width='80%'>
+    </div>
+
+    <script>
+        function sendVoiceCommand() {
+            var commandInput = document.getElementById('voiceCommand');
+            var commandValue = commandInput.value;
+
+            // Send the command to the server (you may use AJAX for this)
+            console.log("Command Sent:", commandValue);
+
+            // Clear the input field
+            commandInput.value = '';
+        }
+    </script>
+</body>
+</html>
